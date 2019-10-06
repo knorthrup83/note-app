@@ -28,6 +28,10 @@ class App extends React.Component {
     .catch((err) => console.log(err.response.data) );
   }
 
+  getNote = () => {
+    console.log('Clicked!');
+  }
+
   render () {
     const { showNote, notes } = this.state;
     return (
@@ -39,6 +43,7 @@ class App extends React.Component {
           <List
             getNotes={this.getNotes}
             notes={notes}
+            getNote={this.getNote}
           /> }
       </div>
     );
