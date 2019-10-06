@@ -10,6 +10,15 @@ class Note extends React.Component {
     this.props.submitNote(formData, this.props.note.id);
   }
 
+  renderTagForm() {
+    return(
+      <span>
+        Tag your note:
+        <i className="tag-button material-icons">add circle</i>
+      </span>
+    );
+  }
+
 	render(){
     const { note } = this.props;
 		return (
@@ -29,7 +38,12 @@ class Note extends React.Component {
             ref={(input) => this.content = input}
           />
           <input className="note-button" type="submit" value="Submit" />
-        </form> 
+        </form>
+        <div className="tag-container">
+          <div className="tag-button-container">
+            {this.renderTagForm()}
+          </div>
+        </div>
 			</div>
 		);
 	}
