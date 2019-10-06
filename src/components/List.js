@@ -1,7 +1,11 @@
 import React from 'react';
 
 class List extends React.Component {
-	render() {
+	componentWillMount() {
+    this.props.getNotes();
+  }
+
+  render() {
 		return (
 			<div className="list-container">
 				List Component
